@@ -1,0 +1,16 @@
+.link {
+    text-decoration: none;
+    color: var(--neutral-700);
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+.link:hover {
+    color: var(--neutral-500);
+}
+.linkActive {
+    color: var(--neutral-950);
+    text-decoration: 2px overline var(--neutral-950);
+}
+.linkActive:hover {
+    color: var(--neutral-950);
+}

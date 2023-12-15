@@ -1,0 +1,9 @@
+.header {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    background-color: var(--neutral-100);
+    outline: 1px solid var(--neutral-300);
+}
