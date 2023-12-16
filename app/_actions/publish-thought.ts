@@ -1,6 +1,7 @@
 'use server'
 import { z } from 'zod'
 import { db } from '@/db'
+import { revalidatePath } from 'next/cache'
 
 const contentSchema = z
     .string()
@@ -12,13 +13,22 @@ export async function publishThought(formData: FormData) {
     const parsedContent = contentSchema.safeParse(content)
     if (parsedContent.success) {
         try {
-            await db.query('INSERT INTO thought (content) VALUES ($1)', [
-                content
-            ])
-        } catch (err) {
-            console.log(err)
+            const { rows } = await db.query(
+                'INSERT INTO thought (content) VALUES ($1) RETURNING id',
+                [content]
+            )
+            return {
+                id: rows[0].id
+            }
+        } catch (error) {
+            return {
+                error: 'An error occurred while publishing a thought.'
+            }
         }
     } else {
-        return parsedContent.error.message
+        return {
+            error: parsedContent.error.message
+        }
     }
+    revalidatePath('/explore')
 }

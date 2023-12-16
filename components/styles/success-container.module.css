@@ -1,0 +1,19 @@
+.container {
+    border: 1px solid var(--succ-400);
+    border-radius: var(--border-radius);
+    padding: 10px;
+    margin: 10px;
+    background-color: var(--succ-50);
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: all 0.2s ease;
+}
+.container > p {
+    color: var(--succ-900);
+    font-size: 0.9rem;
+}
+.successIcon {
+    color: var(--succ-900);
+    font-size: 1.2rem;
+}

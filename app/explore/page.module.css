@@ -4,6 +4,7 @@
     align-items: center;
     padding: 20px;
     gap: 10px;
+    position: relative;
 }
 .container > h2 {
     color: var(--neutral-700);

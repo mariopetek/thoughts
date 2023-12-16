@@ -1,0 +1,15 @@
+.container {
+    border: 1px solid var(--err-400);
+    border-radius: var(--border-radius);
+    padding: 10px;
+    margin: 10px 0px;
+    background-color: var(--err-50);
+}
+.container > p {
+    color: var(--err-900);
+    font-size: 0.9rem;
+}
+.errorIcon {
+    color: var(--err-900);
+    font-size: 1.2rem;
+}
