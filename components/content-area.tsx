@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import styles from './styles/content-area.module.css'
 
-export default function ContentArea() {
+export default function ContentArea({ placeholder }: { placeholder: string }) {
     const [content, setContent] = useState('')
     const maxCaracteres = 255
 
@@ -21,11 +21,11 @@ export default function ContentArea() {
                 value={content}
                 onChange={handleTextAreaChange}
                 maxLength={maxCaracteres}
-                placeholder="What is on your mind?"
+                placeholder={placeholder}
                 required
             ></textarea>
             <div className={styles.underContainer}>
-                <span className={styles.span}>
+                <span className={styles.characterCount}>
                     {content.length} / {maxCaracteres}
                 </span>
                 <input

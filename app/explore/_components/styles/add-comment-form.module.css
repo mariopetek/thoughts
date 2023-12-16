@@ -1,0 +1,21 @@
+.showCommentFormButton {
+    padding: 5px 10px;
+    border: 1px solid var(--neutral-400);
+    border-radius: var(--border-radius);
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--neutral-200);
+    color: var(--neutral-700);
+    transition: all 0.2s ease;
+    font-size: 1rem;
+    width: fit-content;
+}
+.showCommentFormButton:hover {
+    cursor: pointer;
+    background-color: var(--neutral-300);
+    border-color: var(--neutral-500);
+    color: var(--neutral-800);
+}
+.form {
+    display: flex;
+    flex-direction: column;
+}

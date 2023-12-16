@@ -17,6 +17,7 @@ export async function publishThought(formData: FormData) {
                 'INSERT INTO thought (content) VALUES ($1) RETURNING id',
                 [content]
             )
+            revalidatePath('/explore')
             return {
                 id: rows[0].id
             }
@@ -30,5 +31,4 @@ export async function publishThought(formData: FormData) {
             error: parsedContent.error.message
         }
     }
-    revalidatePath('/explore')
 }

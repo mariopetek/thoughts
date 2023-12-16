@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { publishThought } from '../_actions/publish-thought'
-import ContentArea from './content-area'
+import ContentArea from '../../components/content-area'
 import InfoContainer from '../../components/info-container'
 import PublishButton from './publish-button'
 import styles from './styles/new-thought-form.module.css'
@@ -31,7 +31,7 @@ export default function NewThoughtForm() {
                 to see your published thought and leave a comment on it. After publishing
                 your thought you won't be able to edit/delete it."
                 />
-                <ContentArea />
+                <ContentArea placeholder="What is on your mind?" />
                 <PublishButton />
             </form>
             {error && <ErrorContainer text={error} />}

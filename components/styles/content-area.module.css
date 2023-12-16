@@ -15,8 +15,9 @@
 }
 .textArea::placeholder {
     color: var(--neutral-400);
+    font-size: 0.9rem;
 }
-.span {
+.characterCount {
     font-size: 0.8rem;
     color: var(--neutral-700);
 }

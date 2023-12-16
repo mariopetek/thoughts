@@ -62,7 +62,7 @@
     --border-radius: 5px;
 }
 @media (prefers-color-scheme: dark) {
-    :root {
+    /*:root {
         --brand-950: #f0f9ff;
         --brand-900: #e0f2fe;
         --brand-800: #bae6fd;
@@ -122,7 +122,7 @@
         --succ-200: #166534;
         --succ-100: #14532d;
         --succ-50: #052e16;
-    }
+    }*/
 }
 * {
     box-sizing: border-box;
