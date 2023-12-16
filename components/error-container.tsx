@@ -2,6 +2,7 @@
 import { IconContext } from 'react-icons'
 import { FaCircleExclamation } from 'react-icons/fa6'
 import styles from './styles/error-container.module.css'
+import { useEffect, useState } from 'react'
 
 export default function ErrorContainer({ text }: { text: string }) {
     return (

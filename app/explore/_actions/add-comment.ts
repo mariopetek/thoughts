@@ -13,14 +13,10 @@ export async function addComment(formData: FormData, thoughtid: string) {
     const parsedContent = contentSchema.safeParse(content)
     if (parsedContent.success) {
         try {
-            const { rows } = await db.query(
-                'INSERT INTO comment (content, thoughtid) VALUES ($1, $2) RETURNING id',
+            await db.query(
+                'INSERT INTO comment (content, thoughtid) VALUES ($1, $2)',
                 [content, thoughtid]
             )
-            revalidatePath('/explore')
-            return {
-                id: rows[0].id
-            }
         } catch (error) {
             return {
                 error: 'An error occurred while commenting on a thought.'
@@ -31,4 +27,5 @@ export async function addComment(formData: FormData, thoughtid: string) {
             error: parsedContent.error.message
         }
     }
+    revalidatePath('/explore')
 }

@@ -6,19 +6,27 @@ import InfoContainer from '../../components/info-container'
 import PublishButton from './publish-button'
 import styles from './styles/new-thought-form.module.css'
 import ErrorContainer from '@/components/error-container'
-import { redirect } from 'next/navigation'
+import SuccessContainer from '@/components/success-container'
 
 export default function NewThoughtForm() {
     const [error, setError] = useState<string | undefined>()
+    const [success, setSuccess] = useState(false)
 
     async function publishThoughtClient(formData: FormData) {
         const response = await publishThought(formData)
         if (response?.error) {
             setError(response.error)
+            setSuccess(false)
+            setTimeout(() => {
+                setError(undefined)
+            }, 7000)
         } else {
             setError(undefined)
+            setSuccess(true)
+            setTimeout(() => {
+                setSuccess(false)
+            }, 7000)
         }
-        redirect(`/explore?id=${response.id}`)
     }
 
     return (
@@ -35,6 +43,9 @@ export default function NewThoughtForm() {
                 <PublishButton />
             </form>
             {error && <ErrorContainer text={error} />}
+            {success && (
+                <SuccessContainer text="Thought published successfully!" />
+            )}
         </>
     )
 }

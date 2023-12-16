@@ -8,6 +8,7 @@
 .container > p {
     color: var(--info-900);
     font-size: 0.9rem;
+    font-weight: 500;
 }
 .infoIcon {
     color: var(--info-900);

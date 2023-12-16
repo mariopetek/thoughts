@@ -7,6 +7,7 @@
     padding: 20px;
     width: 100%;
     max-width: 600px;
+    position: relative;
 }
 .dateTime {
     color: var(--neutral-600);
@@ -16,6 +17,7 @@
 .container > p {
     color: var(--neutral-800);
     padding-top: 10px;
+    font-weight: 500;
 }
 .separator {
     height: 1px;
