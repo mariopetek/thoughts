@@ -1,5 +1,5 @@
 .container {
-    background-color: var(--neutral-200);
+    background-color: var(--neutral-50);
     border: 1px solid var(--neutral-400);
     border-radius: var(--border-radius);
     display: flex;
