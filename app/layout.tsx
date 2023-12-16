@@ -8,7 +8,8 @@ const montserrat = Montserrat({ subsets: ['latin'] })
 export const metadata: Metadata = {
     title: 'Thoughts',
     description:
-        'App for publishing your thoughts as part of Advanced Web Development course'
+        'App for publishing your thoughts as part of Advanced Web Development course',
+    manifest: '/manifest.json'
 }
 
 export default function RootLayout({
