@@ -26,8 +26,8 @@ export default function NewThoughtForm() {
             <form className={styles.form} action={publishThoughtClient}>
                 <h2>Create a thought</h2>
                 <InfoContainer
-                    text="Share with others what is currently on your mind. Be careful
-                what you say because everyone is going to be able
+                    text="Anonymously share with others what is currently on your mind. Be careful
+                what you say because anyone is going to be able
                 to see your published thought and leave a comment on it. After publishing
                 your thought you won't be able to edit/delete it."
                 />

@@ -8,15 +8,17 @@ export default async function Thoughts() {
         'SELECT * FROM thought ORDER BY publishedat DESC'
     )
     return thoughts.length === 0 ? (
-        <div className={styles.noThoughtsYet}>No public thoughts yet.</div>
+        <div className={styles.noThoughtsYet}>No public thoughts yet...</div>
     ) : (
-        thoughts.map(thought => (
-            <Thought
-                key={thought.id}
-                id={thought.id}
-                content={thought.content}
-                publishedat={thought.publishedat}
-            />
-        ))
+        <div className={styles.thoughtsContainer}>
+            {thoughts.map(thought => (
+                <Thought
+                    key={thought.id}
+                    id={thought.id}
+                    content={thought.content}
+                    publishedat={thought.publishedat}
+                />
+            ))}
+        </div>
     )
 }

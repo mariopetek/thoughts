@@ -1,0 +1,9 @@
+.noCommentsYet {
+    color: var(--neutral-500);
+    font-size: 0.9rem;
+}
+.commentsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}

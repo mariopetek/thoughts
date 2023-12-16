@@ -1,0 +1,18 @@
+.container {
+    background-color: var(--neutral-200);
+    border: 1px solid var(--neutral-400);
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+.dateTime {
+    color: var(--neutral-600);
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+.container > p {
+    color: var(--neutral-800);
+    padding-top: 5px;
+    font-size: 0.9rem;
+}

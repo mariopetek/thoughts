@@ -7,7 +7,11 @@ import styles from './styles/comment-button.module.css'
 export default function CommentButton() {
     const { pending } = useFormStatus()
     return (
-        <button className={styles.button} disabled={pending}>
+        <button
+            className={styles.button}
+            disabled={pending}
+            title="Leave a comment"
+        >
             <IconContext.Provider value={{ className: styles.commentIcon }}>
                 <FaCommentDots />
             </IconContext.Provider>

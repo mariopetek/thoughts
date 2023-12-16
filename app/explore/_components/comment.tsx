@@ -7,9 +7,16 @@ export default function Comment({
     createdat,
     thoughtid
 }: CommentT) {
+    const formatDate = (date: Date) => {
+        return date.toLocaleString('en-US', {
+            dateStyle: 'long',
+            timeStyle: 'short',
+            hour12: false
+        })
+    }
     return (
         <div className={styles.container}>
-            <span className={styles.dateTime}></span>
+            <span className={styles.dateTime}>{formatDate(createdat)}</span>
             <p>{content}</p>
         </div>
     )

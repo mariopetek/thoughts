@@ -19,8 +19,10 @@ export default function AddCommentForm({ thoughtid }: { thoughtid: string }) {
     return showCommentForm ? (
         <form action={addCommentClient} className={styles.form}>
             <input
+                className={styles.hideCommentFormButton}
                 type="button"
-                value="Hide"
+                value="Close"
+                title="Close"
                 onClick={() => setShowCommentForm(false)}
             />
             <ContentArea placeholder="Add a comment..." />
@@ -28,6 +30,7 @@ export default function AddCommentForm({ thoughtid }: { thoughtid: string }) {
         </form>
     ) : (
         <input
+            title="New comment"
             type="button"
             value="New comment"
             onClick={() => setShowCommentForm(true)}

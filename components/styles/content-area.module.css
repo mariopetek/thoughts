@@ -34,7 +34,7 @@
     background-color: var(--neutral-200);
     color: var(--neutral-700);
     transition: all 0.2s ease;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 .clearButton:hover {
     cursor: pointer;
