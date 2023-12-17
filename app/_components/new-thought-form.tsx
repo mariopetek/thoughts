@@ -16,6 +16,7 @@ import { IconContext } from 'react-icons'
 import SpeechRecognition, {
     useSpeechRecognition
 } from 'react-speech-recognition'
+import { useRouter } from 'next/navigation'
 
 const maxCharacters = 255
 export default function NewThoughtForm() {
@@ -26,6 +27,7 @@ export default function NewThoughtForm() {
         useState(true)
     const { transcript, listening, isMicrophoneAvailable, resetTranscript } =
         useSpeechRecognition()
+    const router = useRouter()
 
     const handleTextAreaChange = (
         event: React.ChangeEvent<HTMLTextAreaElement>
@@ -57,7 +59,18 @@ export default function NewThoughtForm() {
                 setSuccess(false)
             }, 7000)
             if (Notification.permission === 'granted') {
-                new Notification('You just published a new thought.')
+                const notification = new Notification(
+                    'You just published a new thought.',
+                    {
+                        body: 'You can see it in the explore page.',
+                        icon: '/favicon.ico',
+                        requireInteraction: true
+                    }
+                )
+                notification.addEventListener('click', () => {
+                    router.push('/explore')
+                    notification.close()
+                })
             }
             voiceRecognitionSupported && isMicrophoneAvailable
                 ? resetTranscript()
