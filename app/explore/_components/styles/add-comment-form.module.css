@@ -3,12 +3,12 @@
     padding: 5px 10px;
     border: 1px solid var(--neutral-400);
     border-radius: var(--border-radius);
-    font-family: 'Montserrat', sans-serif;
     background-color: var(--neutral-200);
     color: var(--neutral-700);
     transition: all 0.2s ease;
     font-size: 0.9rem;
     width: fit-content;
+    font-weight: 500;
 }
 .showCommentFormButton:hover,
 .hideCommentFormButton:hover {

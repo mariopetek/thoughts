@@ -15,7 +15,7 @@ export default function PublishButton() {
             <IconContext.Provider value={{ className: styles.globeIcon }}>
                 <FaGlobeAmericas />
             </IconContext.Provider>
-            {pending ? 'Publishing...' : 'Publish'}
+            <span>{pending ? 'Publishing...' : 'Publish'}</span>
         </button>
     )
 }

@@ -15,7 +15,7 @@ export default function CommentButton() {
             <IconContext.Provider value={{ className: styles.commentIcon }}>
                 <FaCommentDots />
             </IconContext.Provider>
-            {pending ? '...' : 'Comment'}
+            <span>{pending ? '...' : 'Comment'}</span>
         </button>
     )
 }
