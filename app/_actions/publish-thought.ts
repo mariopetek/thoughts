@@ -13,14 +13,9 @@ export async function publishThought(formData: FormData) {
     const parsedContent = contentSchema.safeParse(content)
     if (parsedContent.success) {
         try {
-            const { rows } = await db.query(
-                'INSERT INTO thought (content) VALUES ($1) RETURNING id',
-                [content]
-            )
-            revalidatePath('/explore')
-            return {
-                id: rows[0].id
-            }
+            await db.query('INSERT INTO thought (content) VALUES ($1)', [
+                content
+            ])
         } catch (error) {
             return {
                 error: 'An error occurred while publishing a thought.'
@@ -31,4 +26,5 @@ export async function publishThought(formData: FormData) {
             error: parsedContent.error.message
         }
     }
+    revalidatePath('/explore')
 }
