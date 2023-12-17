@@ -71,18 +71,25 @@ export default function NewThoughtForm() {
                     <div className={styles.speechRecognition}>
                         {isMicrophoneAvailable ? (
                             listening ? (
-                                <div
-                                    onClick={() => {
-                                        SpeechRecognition.stopListening()
-                                    }}
-                                    className={`${styles.buttonContainer} ${styles.stopRecordingButton}`}
-                                >
-                                    <IconContext.Provider
-                                        value={{ className: styles.stopIcon }}
+                                <div className={styles.recordingContainer}>
+                                    <div
+                                        className={styles.recordingIndicator}
+                                    ></div>
+                                    <div
+                                        onClick={() => {
+                                            SpeechRecognition.stopListening()
+                                        }}
+                                        className={`${styles.buttonContainer} ${styles.stopRecordingButton}`}
                                     >
-                                        <FaRegStopCircle />
-                                    </IconContext.Provider>
-                                    <span>Stop</span>
+                                        <IconContext.Provider
+                                            value={{
+                                                className: styles.stopIcon
+                                            }}
+                                        >
+                                            <FaRegStopCircle />
+                                        </IconContext.Provider>
+                                        <span>Stop</span>
+                                    </div>
                                 </div>
                             ) : (
                                 <div

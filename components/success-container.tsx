@@ -2,7 +2,6 @@
 import { FaCheckCircle } from 'react-icons/fa'
 import styles from './styles/success-container.module.css'
 import { IconContext } from 'react-icons'
-import { useEffect, useState } from 'react'
 
 export default function SuccessContainer({ text }: { text: string }) {
     return (
