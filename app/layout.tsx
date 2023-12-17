@@ -3,14 +3,14 @@ import { Montserrat } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/header'
 
-export const montserrat = Montserrat({
+const montserrat = Montserrat({
     weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
     style: 'normal',
     subsets: ['latin'],
     variable: '--font-montserrat'
 })
 
-const metadata: Metadata = {
+export const metadata: Metadata = {
     title: 'Thoughts',
     description:
         'App for publishing your thoughts as part of Advanced Web Development course',
