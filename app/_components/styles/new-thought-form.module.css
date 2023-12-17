@@ -118,6 +118,9 @@
     color: var(--neutral-400);
     font-size: 0.9rem;
 }
+.textArea:read-only {
+    cursor: default;
+}
 .characterCount {
     font-size: 0.8rem;
     color: var(--neutral-700);
