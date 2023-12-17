@@ -1,5 +1,6 @@
-import { CommentT } from '@/types/CommentType'
+import { CommentT } from '@/types'
 import styles from './styles/comment.module.css'
+import { formatDateTime } from '@/utils'
 
 export default function Comment({
     id,
@@ -7,16 +8,9 @@ export default function Comment({
     createdat,
     thoughtid
 }: CommentT) {
-    const formatDate = (date: Date) => {
-        return date.toLocaleString('en-US', {
-            dateStyle: 'long',
-            timeStyle: 'short',
-            hour12: false
-        })
-    }
     return (
         <div className={styles.container}>
-            <span className={styles.dateTime}>{formatDate(createdat)}</span>
+            <span className={styles.dateTime}>{formatDateTime(createdat)}</span>
             <p>{content}</p>
         </div>
     )

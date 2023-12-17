@@ -1,4 +1,4 @@
-import type { ThoughtT } from '@/types/ThoughtType'
+import type { ThoughtT } from '@/types'
 import styles from './styles/thoughts.module.css'
 import Thought from './thought'
 import { db } from '@/db'

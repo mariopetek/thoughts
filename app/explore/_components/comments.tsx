@@ -1,6 +1,6 @@
 import { db } from '@/db'
 import Comment from './comment'
-import type { CommentT } from '@/types/CommentType'
+import type { CommentT } from '@/types'
 import styles from './styles/comments.module.css'
 
 export default async function Comments({ thoughtid }: { thoughtid: string }) {

@@ -37,7 +37,7 @@ export default function NewThoughtForm() {
         setVoiceRecognitionSupported('webkitSpeechRecognition' in window)
     }, [])
     useEffect(() => {
-        setContent(transcript || '')
+        voiceRecognitionSupported && setContent(transcript)
     }, [transcript])
 
     async function publishThoughtClient(formData: FormData) {
@@ -54,6 +54,10 @@ export default function NewThoughtForm() {
             setTimeout(() => {
                 setSuccess(false)
             }, 7000)
+            if (Notification.permission === 'granted') {
+                new Notification('Somebody published new thought.')
+            }
+            voiceRecognitionSupported ? resetTranscript() : setContent('')
         }
     }
 
@@ -140,6 +144,7 @@ export default function NewThoughtForm() {
                     maxLength={maxCharacters}
                     placeholder="What is on your mind?"
                     required
+                    readOnly={voiceRecognitionSupported}
                 ></textarea>
                 <div className={styles.underContainer}>
                     <span className={styles.characterCount}>

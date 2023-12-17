@@ -26,6 +26,7 @@ export default function AddCommentForm({ thoughtid }: { thoughtid: string }) {
             }, 7000)
         } else {
             setError(undefined)
+            setContent('')
         }
     }
     return (
