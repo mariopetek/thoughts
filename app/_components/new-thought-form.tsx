@@ -58,6 +58,7 @@ export default function NewThoughtForm() {
             setTimeout(() => {
                 setSuccess(false)
             }, 7000)
+            /*
             if (Notification.permission === 'granted') {
                 const notification = new Notification(
                     'You just published a new thought.',
@@ -71,7 +72,7 @@ export default function NewThoughtForm() {
                     router.push('/explore')
                     notification.close()
                 })
-            }
+            }*/
             voiceRecognitionSupported && isMicrophoneAvailable
                 ? resetTranscript()
                 : setContent('')

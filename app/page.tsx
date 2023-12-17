@@ -4,9 +4,9 @@ import NewThoughtForm from './_components/new-thought-form'
 import styles from './page.module.css'
 
 export default function Publish() {
-    useEffect(() => {
+    /*useEffect(() => {
         'Notification' in window && Notification.requestPermission()
-    })
+    })*/
     return (
         <div className={styles.container}>
             <NewThoughtForm />
