@@ -55,7 +55,7 @@ export default function NewThoughtForm() {
                 setSuccess(false)
             }, 7000)
             if (Notification.permission === 'granted') {
-                new Notification('Somebody published new thought.')
+                new Notification('Somebody published new thought.', {})
             }
             voiceRecognitionSupported ? resetTranscript() : setContent('')
         }
