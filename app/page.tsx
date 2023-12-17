@@ -8,9 +8,6 @@ export default function Publish() {
         if ('Notification' in window) {
             Notification.requestPermission()
         }
-        if (Notification.permission === 'granted') {
-            new Notification('Welcome to Thoughts!')
-        }
     }, [])
     return (
         <div className={styles.container}>

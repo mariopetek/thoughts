@@ -58,12 +58,12 @@ export default function NewThoughtForm() {
             setTimeout(() => {
                 setSuccess(false)
             }, 7000)
-            /*
+
             if (Notification.permission === 'granted') {
                 const notification = new Notification(
                     'You just published a new thought.',
                     {
-                        body: 'You can see it in the explore page.',
+                        body: 'You can see it in the explore page. Click here to navigate to it.',
                         icon: '/favicon.ico',
                         requireInteraction: true
                     }
@@ -72,7 +72,7 @@ export default function NewThoughtForm() {
                     router.push('/explore')
                     notification.close()
                 })
-            }*/
+            }
             voiceRecognitionSupported && isMicrophoneAvailable
                 ? resetTranscript()
                 : setContent('')
