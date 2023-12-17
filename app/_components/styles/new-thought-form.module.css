@@ -12,3 +12,115 @@
     color: var(--neutral-700);
     text-align: center;
 }
+.buttonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    width: fit-content;
+    border-radius: var(--border-radius);
+    gap: 5px;
+    transition: all 0.2s ease;
+    margin-bottom: 5px;
+}
+.startRecordingButton {
+    background-color: var(--brand-500);
+    border: 1px solid var(--brand-600);
+}
+.startRecordingButton:hover {
+    cursor: pointer;
+    background-color: var(--brand-600);
+    border-color: var(--brand-700);
+}
+.buttonContainer > span {
+    font-weight: 500;
+    color: #f8fafc;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+.stopRecordingButton {
+    background-color: var(--err-500);
+    border: 1px solid var(--err-600);
+}
+.stopRecordingButton:hover {
+    cursor: pointer;
+    background-color: var(--err-600);
+    border-color: var(--err-700);
+}
+.microphoneIcon,
+.stopIcon,
+.noMicrophoneIcon {
+    color: #f8fafc;
+    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.3));
+}
+.noMicrophoneLabel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: #f8fafc;
+    padding: 10px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--neutral-200);
+    width: fit-content;
+    margin-bottom: 5px;
+    background-color: var(--neutral-400);
+}
+.noMicrophoneLabel > span {
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    font-weight: 500;
+}
+.textArea {
+    background-color: var(--neutral-50);
+    border: 1px solid var(--neutral-500);
+    border-radius: var(--border-radius);
+    padding: 5px;
+    font-size: 1rem;
+    color: var(--neutral-700);
+    width: 100%;
+    resize: vertical;
+    margin: 5px 0px;
+    min-height: 50px;
+}
+.textArea:focus {
+    outline: 2px solid var(--brand-500);
+}
+.textArea::placeholder {
+    color: var(--neutral-400);
+    font-size: 0.9rem;
+}
+.characterCount {
+    font-size: 0.8rem;
+    color: var(--neutral-700);
+}
+.underContainer {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+.clearButton {
+    padding: 5px 10px;
+    border: 1px solid var(--neutral-400);
+    border-radius: var(--border-radius);
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--neutral-200);
+    color: var(--neutral-700);
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+.clearButton:hover {
+    cursor: pointer;
+    background-color: var(--neutral-300);
+    border-color: var(--neutral-500);
+    color: var(--neutral-800);
+}
+.clearButton:disabled {
+    background-color: var(--neutral-100);
+    border-color: var(--neutral-300);
+    color: var(--neutral-400);
+    cursor: not-allowed;
+}
+.notSupported {
+    margin-bottom: 5px;
+    color: var(--err-500);
+    font-weight: 500;
+}
